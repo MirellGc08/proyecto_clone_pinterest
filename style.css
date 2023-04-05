@@ -1,0 +1,211 @@
+
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    /* ~ 1rem */
+}
+
+:root {
+    --card_width: 15.625rem;
+    /*~250px Anchura de la tarjeta/pin */
+    --row_increment: 0.625rem;
+    /*~10px Al estar usando CSS grid, cada tarjeta/pin estará hecha con incrementos de 10px para las filas */
+    --card_border_radius: 1rem;
+    /*~16px  Redondeo en los bordes de las tarjetas/pines*/
+    --card_small: 26;
+    /* Factor de crecimiento para tarjetas pequeñas: 26*0.625rem */
+    --card_medium: 33;
+    /* Factor de crecimiento para tarjetas medianas: 26*0.625rem */
+    --card_large: 45;
+    /* Factor de crecimiento para tarjetas grandes: 26*0.625rem */
+}
+
+main {
+    height: 100vh;
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+nav {
+    height: 5rem;
+    background-color:#FFFFFF;
+    display: flex;
+}
+.navbar_pinterest_buttons_container {
+    width: 16rem;
+    background-color:#FFFFFF;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+padding-inline-start: 1rem;
+}
+.navbar_pinterest_buttons{ 
+ border-radius: 20px;
+ display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+ }
+ .boton_pint {
+height: 3rem;
+width: 3rem;
+display: block;
+border-radius: 50%;
+align-content: center;
+flex-wrap: wrap;
+background: #FFFFFF;
+border: 0;
+}
+
+.boton_pint:hover { 
+background:#f0f0f0;
+}
+
+ .boton_inicio{ 
+ height:3rem ;
+ width: 4rem;
+ border-radius: 15px;
+ background-color:#FFFFFF ;
+ border: 0;
+font-size: 16px;
+font-family: apple-system, BlinkMacSystemFont,Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica}
+ 
+ .boton_inicio:focus{ 
+    background-color: black;
+color: white;
+font-weight: bold;}
+    
+.boton_hoy{ 
+ height:3rem ;
+ width: 4rem;
+ border-radius: 15px;
+ background-color:#FFFFFF ;
+ border: 0;
+ font-size: 16px;
+ font-family: apple-system, BlinkMacSystemFont,Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica}
+  
+
+ #dropdown_crear{
+    outline: none;
+    height:3rem ;
+ width: 4rem;
+ border-radius: 15px;
+ border: 0;
+ font-size: 16px;
+ font-family: apple-system, BlinkMacSystemFont,Segoe UI, Roboto, Oxygen-Sans, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica} 
+
+ #dropdown_crear:focus{
+    outline: none;
+    background-color: #FFFFFF;
+ }
+.navbar_input_search_container {
+    flex-grow: 4;
+    min-width: 3rem;
+    background-color:#FFFFFF ;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar_input_search {
+    margin-inline: 0.8rem;
+    padding-inline-start: 0.8rem;
+    height: 3rem;
+    width: 100%;
+    background-color: #E9E9E9;
+    border-radius: 1.5rem;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar_input_search>svg {
+    height: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.navbar_input_search>input {
+    height: 2rem;
+    flex-grow: 3;
+    margin-inline-end: 1rem;
+    margin-inline-start: 0.8rem;
+    background-color: transparent;
+    border-style: none;
+}
+
+.navbar_input_search>input:focus-visible {
+    outline: none;
+}
+
+.navbar_user_buttons_container {
+    width: 16rem;
+    background-color:#FFFFFF;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+padding-inline-start: 1rem;
+}
+.boton_noti{
+ height: 4rem;
+width: 3rem;
+display: block;
+border-radius: 50%;
+align-content: center;
+flex-wrap: wrap;
+background: #FFFFFF;
+color:#5F5F5F;
+border: 0;
+}
+.bi-bell-fill{
+ font-size: 1.5rem;
+}
+.bi-chat-dots-fill{
+    font-size: 1.5rem;
+}
+
+.boton_mensaje {
+    height: 4rem;
+width: 3rem;
+display: block;
+border-radius: 50%;
+align-content: center;
+flex-wrap: wrap;
+background: #FFFFFF;
+color:#5F5F5F;
+border: 0;
+}
+.pin_container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, var(--card_width));
+    grid-auto-rows: var(--row_increment);
+    justify-content: center;
+    background-color: #FFFFFF;
+}
+
+.card {
+    padding: 0;
+    margin: 15px 10px;
+    border-radius: var(--card_border_radius);
+    background-color: #f5f5f5;
+}
+
+.card_small {
+    grid-row-end: span var(--card_small);
+}
+
+.card_medium {
+    grid-row-end: span var(--card_medium);
+}
+
+.card_large {
+    grid-row-end: span var(--card_large);
+}
